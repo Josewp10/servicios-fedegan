@@ -1,5 +1,5 @@
 const fakePedidos = require('../../../database/fake-db/pedidos');
-const {posicionPedido} = require('../helpers/pedidos')
+
 
 class PedidosDAO{
 
@@ -21,15 +21,14 @@ class PedidosDAO{
         }        
     }
 
-    eliminarPedido(id_pedido){
-        let posicion = posicionPedido(fakePedidos.pedidos, id_pedido);
-        fakePedidos.pedidos.splice(posicion[i],1);
+    eliminarPedido(posicion){
+        fakePedidos.pedidos.splice(posicion,1);
     }
     
     actualizarPedidos(pedidos, posiciones_pedidos){
         for (let i = 0; i < pedidos.length; i++) {
             let posicion=posiciones_pedidos[i];
-            fakePedidos.pedidos[posicion]=pedido;
+            fakePedidos.pedidos[posicion]=pedidos[i];
         }       
     }
 

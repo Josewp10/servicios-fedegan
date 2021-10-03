@@ -1,9 +1,11 @@
 const fakePedidos = require('../../../database/fake-db/pedidos');
-
+const {Listas} = require('../../utils/listas')
+const _listas = new Listas;
 const {PedidosDAO} = require('../DAO/pedidos');
-const pedidosDAO = new PedidosDAO;
+const _pedidosDAO = new PedidosDAO;
 
-class pedidosController{
+
+class PedidosController{
 
     validarPedidos(pedido){
         if (!pedido) {
@@ -21,38 +23,41 @@ class pedidosController{
         }
     }
 
-    consultarPedidos(){
-        return pedidosDAO.consultarPedidos();
+    async consultarPedidos(){
+        return _pedidosDAO.consultarPedidos();
     }
 
-    consultarPedido(id_pedido){
-        let posicion = posicionPedido(fakePedidos.pedidos, id_pedido);
-        return pedidosDAO.consultarPedido(posicion);
+    async consultarPedido(id_pedido){
+        let posicion = _listas.posicionEnLista(fakePedidos.pedidos, id_pedido);
+        return _pedidosDAO.consultarPedido(posicion);
     }
 
-    crearPedido(pedido){
-        pedidosDAO.crearPedido(pedido);
+    async crearPedido(pedido){
+        _listas.enLista(fakePedidos.pedidos,pedido.id)
+        _pedidosDAO.crearPedido(pedido);
     }
 
-    eliminarPedidos(lista_id_pedido){
-        let posiciones_pedidos = posicionesPedidos(fakePedidos.pedidos, lista_id_pedido);
-        pedidosDAO.eliminarPedidos(posiciones_pedidos);
+    async eliminarPedidos(lista_id_pedido){
+        let posiciones_pedidos = _listas.posicionesEnLista(fakePedidos.pedidos, lista_id_pedido);
+        _pedidosDAO.eliminarPedidos(posiciones_pedidos);
     }
 
-    eliminarPedido(id_pedido){
-        let posicion = posicionPedido(fakePedidos.pedidos, id_pedido);
-        pedidosDAO.eliminarPedido(posicion);
+    async eliminarPedido(id_pedido){
+        let posicion = _listas.posicionEnLista(fakePedidos.pedidos, id_pedido);
+        _pedidosDAO.eliminarPedido(posicion);
     }
     
-    actualizarPedidos(pedidos){
-        let posiciones_pedidos = posicionesPedidos(fakePedidos.pedidos, lista_id_pedido);
-        pedidosDAO.actualizarPedidos(pedidos, posiciones_pedidos)
+    async actualizarPedidos(pedidos, lista_ids){
+        _listas.mismoId(pedidos, lista_ids);
+        let posiciones_pedidos = _listas.posicionesEnLista(fakePedidos.pedidos, lista_ids);
+        _pedidosDAO.actualizarPedidos(pedidos, posiciones_pedidos)
     }
 
-    actualizarPedido(pedido){
-        let posicion = posicionPedido(fakePedidos.pedidos, pedido.id_pedido);
-        pedidosDAO.actualizarPedido(pedido, posicion);
+    async actualizarPedido(pedido, id_pedido){
+        _listas.mismoId([pedido], [id_pedido]);
+        let posicion = _listas.posicionEnLista(fakePedidos.pedidos, pedido.id);
+        _pedidosDAO.actualizarPedido(pedido, posicion);
     }
 }
 
-module.exports={pedidosController}
+module.exports={PedidosController}

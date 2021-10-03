@@ -43,7 +43,7 @@ class Listas{
         }
         
         if (coincidencias!=lista_pedidos.length){
-            throw 'Los id de los elementos a modificar no coinciden con los enviados'}
+            throw 'El id del objeto no coincide con el enviado'}
     }
 
 }

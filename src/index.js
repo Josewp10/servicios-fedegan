@@ -18,6 +18,8 @@ app.get('/', (req,res) =>{
 });
 
 //routes
+const ruta_pedidos = require('./libs/pedidos/routes/pedidos');
+app.use(ruta_pedidos);
 
 //Port
 const port = config.get('SERVER.port');
