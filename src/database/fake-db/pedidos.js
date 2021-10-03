@@ -1,6 +1,6 @@
 let pedidos =[
     {
-        id_pedido:1,
+        id:1,
         productos:['cuido'],
         detalle_pedido:'El mejor cuido',
         direccion_envio:'La finca',
