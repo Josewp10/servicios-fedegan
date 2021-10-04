@@ -16,7 +16,7 @@ class PedidosDAO{
     }
 
     eliminarPedidos(posiciones_pedidos){
-        for (let i = 0; i < posiciones_pedidos.length; i++) {
+        for (let i = 0; i <= posiciones_pedidos.length; i++) {
             fakePedidos.pedidos.splice(posiciones_pedidos[i],1);
         }        
     }
@@ -26,7 +26,7 @@ class PedidosDAO{
     }
     
     actualizarPedidos(pedidos, posiciones_pedidos){
-        for (let i = 0; i < pedidos.length; i++) {
+        for (let i = 0; i <= pedidos.length; i++) {
             let posicion=posiciones_pedidos[i];
             fakePedidos.pedidos[posicion]=pedidos[i];
         }       
