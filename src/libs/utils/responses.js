@@ -7,7 +7,6 @@ let success = (req, res, message, info, status)=>{
 }
 
 let errorResponse = (req, res, message, info, status)=>{
-    console.log(info);
     res.status(status || 500).send({
         ok: false,
         info: info || {},

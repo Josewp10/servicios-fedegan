@@ -33,7 +33,7 @@ class Listas{
 
     mismoId(lista_pedidos, lista_ids){
         let coincidencias=0;
-        for (let i = 0; i < lista_ids.length; i++) {
+        for (let i = 0; i <= lista_ids.length; i++) {
             for (let j = 0; j < lista_pedidos.length; j++) {
                 
                 if (lista_ids[i]==lista_pedidos[j].id) {
@@ -41,9 +41,12 @@ class Listas{
                 }
             }
         }
-        
-        if (coincidencias!=lista_pedidos.length){
-            throw 'El id del objeto no coincide con el enviado'}
+
+        if (coincidencias!=lista_pedidos.length && lista_pedidos.length==1){
+            throw 'El id del objeto no coincide con el enviado'
+        }else if (coincidencias!=lista_pedidos.length && lista_pedidos.length>1) {
+            throw 'El id de los objetos no coincide con los enviados enviado'
+        } 
     }
 
 }
