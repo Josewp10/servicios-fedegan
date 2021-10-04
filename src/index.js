@@ -21,6 +21,15 @@ app.get('/', (req,res) =>{
 const ruta_pedidos = require('./libs/pedidos/routes/pedidos');
 app.use(ruta_pedidos);
 
+const ruta_catalogo = require('./libs/catalogo/routes/catalogo');
+app.use(ruta_catalogo);
+
+const ruta_formularios = require('./libs/formularios/routes/formularios');
+app.use(ruta_formularios);
+
+const ruta_citas = require('./libs/citas/routes/citas');
+app.use(ruta_citas);
+
 //Port
 const port = config.get('SERVER.port');
 
