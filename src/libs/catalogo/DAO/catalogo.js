@@ -11,15 +11,22 @@ class CatalogoDAO{
         return fakeCatalogo.catalogo[posicion_catalogo];
     }
 
-    crearCatalogos(catalogos){
-        for (let i = 0; i < catalogos.length; i++) {
-            fakeCatalogo.catalogo.push(catalogos[i]);
-        }   
+    crearCatalogos(catalogo){
+        for (let i = 0; i < catalogo.length; i++) {
+            fakeCatalogo.catalogo.push(catalogo[i]);
+        }    
     }
 
+   
     eliminarCatalogos(posiciones_catalogo){
-        for (let i = 0; i <= posiciones_catalogo.length; i++) {
-            fakeCatalogo.catalogo.splice(posiciones_catalogo[i],1);
+        for (let i = 0; i < posiciones_catalogo.length; i++) {
+           console.log(i-1);
+            if (i==0) {
+                fakeCatalogo.catalogo.splice(posiciones_catalogo[i],1);
+            }else{
+                fakeCatalogo.catalogo.splice(posiciones_catalogo[i]-1,1);
+            }
+            
         }        
     }
 

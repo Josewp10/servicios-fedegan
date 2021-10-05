@@ -31,7 +31,7 @@ class CatalogoController{
     }
 
     async crearCatalogos(catalogo){
-        _listas.enLista(fakeCatalogo.catalogo,catalogo)
+        _listas.enLista(fakeCatalogo.catalogo,catalogo) 
         _catalogoDAO.crearCatalogos(catalogo);
     }
 
