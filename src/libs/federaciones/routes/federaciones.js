@@ -18,7 +18,7 @@ router.get('/federaciones', async (req, res) => {
 router.get('/federaciones/:id_federacion', async (req, res) => {
     let id_federacion = req.params.id_federacion;
     try {
-      let resp = await _federacionesController.consultarFederacion(id_federacion)
+      let resp = await _federacionesController.consultarFederacion(id_federacion);
       success(req, res, 'Federacion', resp, 200);
       
     } catch (error) {

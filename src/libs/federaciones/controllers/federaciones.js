@@ -49,7 +49,7 @@ class federacionesController{
 
     async actualizarFederacion(federaciones, id_federacion){
         _listas.mismoId([federaciones], [id_federacion]);
-        let posicion = _listas.posicionEnLista(fakeFederaciones.federaciones, federaciones.id_federacion);
+        let posicion = _listas.posicionEnLista(fakeFederaciones.federaciones, id_federacion);
         _federacionesDAO.actualizarFederacion(federaciones, posicion);
     }
 }
