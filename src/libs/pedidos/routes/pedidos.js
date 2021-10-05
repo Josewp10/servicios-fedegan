@@ -38,30 +38,6 @@ router.post('/pedidos', async (req, res) => {
     }
   });
 
-
-  router.delete('/pedidos', async (req, res) => {
-    let lista_ids = req.query.lista_ids;
-    try {
-      await _pedidosController.eliminarPedidos(lista_ids);
-      success(req, res, 'Pedidos eliminados', null, 200);
-    } catch (error) {
-      errorResponse(req, res, 'ERROR', error);
-    }
-  
-  });
-
-router.delete('/pedidos/:id_pedido', async (req, res) => {
-  let id_pedido = req.params.id_pedido;
-
-  try {
-    await _pedidosController.eliminarPedido(id_pedido);
-    success(req, res, 'Pedido eliminado', null, 200);
-  } catch (error) {
-    errorResponse(req, res, 'ERROR', error);
-  }
-
-});
-
 router.put("/pedidos", async (req, res) => {
   try {
     let lista_ids = req.query.lista_ids;

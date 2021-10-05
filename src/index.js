@@ -28,6 +28,7 @@ const ruta_pagos = require('./libs/pagos/routes/pagos');
 const ruta_federaciones = require ('./libs/federaciones/routes/federaciones');
 const ruta_vacunadores = require('./libs/vacunadores/routes/vacunadores');
 const ruta_facturaciones = require('./libs/facturaciones/routes/facturaciones');
+const ruta_solicitantes = require('./libs/solicitantes/routes/solicitantes');
 
 app.use(ruta_federaciones);
 app.use(ruta_vacunadores);
@@ -40,6 +41,7 @@ app.use(ruta_socios);
 app.use(ruta_pedidos);
 app.use(ruta_productos);
 app.use(ruta_notificaciones);
+app.use(ruta_solicitantes);
 
 //Port
 const port = config.get('SERVER.port');
