@@ -3,11 +3,11 @@ const fakeFacturaciones = require('../../../database/fake-db/facturaciones');
 
 class facturacionesDAO{
 
-    consultarFederaciones(){
+    consultarFacturas(){
         return fakeFacturaciones.facturaciones;
     }
 
-    consultarFederacion(posicion_factura){
+    consultarFactura(posicion_factura){
         return fakeFacturaciones.facturaciones[posicion_factura];
     }
 
