@@ -19,7 +19,13 @@ class VacunadoresDAO{
 
     eliminarVacunadores(posiciones_vacunadores){
         for (let i = 0; i < posiciones_vacunadores.length; i++) {
-            fakeVacunadores.vacunadores.splice(posiciones_vacunadores[i],1);
+           console.log(i-1);
+            if (i==0) {
+                fakeVacunadores.vacunadores.splice(posiciones_vacunadores[i],1);
+            }else{
+                fakeVacunadores.vacunadores.splice(posiciones_vacunadores[i]-1,1);
+            }
+            
         }        
     }
 

@@ -1,9 +1,9 @@
 const express = require('express');
-const { VacunadoresController } = require('../controllers/vacunadores');
+const { vacunadoresController } = require('../controllers/vacunadores');
 const {success, errorResponse} = require('../../utils/responses');
 
 const router = express.Router();
-const _vacunadoresController = new VacunadoresController;
+const _vacunadoresController = new vacunadoresController;
 
   
 router.get('/vacunadores', async (req, res) => {
@@ -29,9 +29,8 @@ router.get('/vacunadores/:id_vacunador', async (req, res) => {
 
 router.post('/vacunadores', async (req, res) => {
     try {
-      let vacunador = req.body.lista_vacunadores;
-  
-      await _vacunadoresController.crearVacunadores(vacunador);
+      let vacunadores = req.body.lista_vacunadores;
+      await _vacunadoresController.crearVacunadores(vacunadores);
       success(req, res, 'Vacunador creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);
@@ -42,7 +41,7 @@ router.post('/vacunadores', async (req, res) => {
   router.delete('/vacunadores', async (req, res) => {
     let lista_ids = req.query.lista_ids;
     try {
-      await _pedidosController.eliminarPedidos(lista_ids);
+      await _vacunadoresController.eliminarVacunadores(lista_ids);
       success(req, res, 'Vacunadores eliminados', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);
@@ -76,8 +75,8 @@ router.put("/vacunadores", async (req, res) => {
 
 router.put("/vacunadores/:id_vacunador", async (req, res) => {
   try {
-    let id_vacunador = req.params.id_pedido;
-    let vacunador = req.body;
+    let id_vacunador = req.params.id_vacunador;
+    let vacunador = req.body.lista_vacunadores;
 
     await _vacunadoresController.actualizarVacunador(vacunador, id_vacunador);
     success(req, res, 'Vacunador modificado', null, 200);

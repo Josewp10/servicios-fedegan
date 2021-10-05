@@ -34,13 +34,14 @@ class vacunadoresController{
         return _vacunadoresDAO.consultarVacunador(posicion);
     }
 
-    async crearVacunadores(vacunador){
-        _listas.enLista(fakeVacunadores.vacunadores,vacunador)
-        _vacunadoresDAO.crearVacunadores(vacunador);
+    async crearVacunadores(vacunadores){
+        _listas.enLista(fakeVacunadores.vacunadores,vacunadores)
+        _vacunadoresDAO.crearVacunadores(vacunadores);
     }
 
     async eliminarVacunadores(lista_id_vacunador){
         let posiciones_vacunadores = _listas.posicionesEnLista(fakeVacunadores.vacunadores, lista_id_vacunador);
+        console.log(posiciones_vacunadores);
         _vacunadoresDAO.eliminarVacunadores(posiciones_vacunadores);
     }
 
@@ -57,7 +58,7 @@ class vacunadoresController{
 
     async actualizarVacunador(vacunador, id_vacunador){
         _listas.mismoId([vacunador], [id_vacunador]);
-        let posicion = _listas.posicionEnLista(fakeVacunadores.vacunadores, vacunador.id_vacunador);
+        let posicion = _listas.posicionEnLista(fakeVacunadores.vacunadores, id_vacunador);
         _vacunadoresDAO.actualizarVacunador(vacunador, posicion);
     }
 }
