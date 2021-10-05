@@ -42,7 +42,7 @@ class SociosController{
     async actualizarSocios(socios, lista_ids){
         _listas.mismoId(socios, lista_ids);
         let posiciones_socios = _listas.posicionesEnLista(fakeSocios.socios, lista_ids);
-        _sociosDAO.actualizarPedidos(pedidos, posiciones_socios)
+        _sociosDAO.actualizarPedidos(socios, posiciones_socios)
     }
 
     async actualizarSocio(socio, id_socio){
