@@ -34,9 +34,9 @@ class SociosController{
         return _sociosDAO.consultarSocio(posicion);
     }
 
-    async crearSocio(socio){
-        _listas.enLista(fakeSocios.socios,socio.id)
-        _sociosDAO.crearSocio(socio);
+    async crearSocios(socios){
+        _listas.enLista(fakeSocios.socios,socios)
+        _sociosDAO.crearSocios(socios);
     }
     
     async actualizarSocios(socios, lista_ids){

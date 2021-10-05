@@ -32,9 +32,9 @@ class ProductosController{
         return _productosDAO.consultarProducto(posicion);
     }
 
-    async crearProducto(producto){
-        _listas.enLista(fakeProductos.productos,producto.id)
-        _productosDAO.crearProducto(producto);
+    async crearProductos(productos){
+        _listas.enLista(fakeProductos.productos,productos)
+        _productosDAO.crearProductos(productos);
     }
 
     async eliminarProductos(lista_id_producto){

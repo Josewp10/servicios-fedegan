@@ -29,14 +29,14 @@ router.get('/notificaciones/:id_notificacion', async (req, res) => {
 
 router.post('/notificaciones', async (req, res) => {
     try {
-      let notificacion = req.body;
+      let notificaciones = req.body.lista_notificaciones;
   
-      let resp = await _notificacionesController.crearNotificacion(notificacion);
+      await _notificacionesController.crearNotificaciones(notificaciones);
       success(req, res, 'Notificacion creada', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);
     }
-  });
+});
 
 
   router.delete('/notificaciones', async (req, res) => {

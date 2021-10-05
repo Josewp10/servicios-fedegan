@@ -29,10 +29,10 @@ router.get('/citas/:id_cita', async (req, res) => {
 
 router.post('/citas', async (req, res) => {
     try {
-      let cita = req.body;
+      let citas = req.body.lista_citas;
   
-      let resp = await _citasController.crearCita(cita);
-      success(req, res, 'cita creada', null, 200);
+      await _citasController.crearCitas(citas);
+      success(req, res, 'Cita creada', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);
     }

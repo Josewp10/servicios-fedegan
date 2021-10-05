@@ -29,9 +29,9 @@ router.get('/socios/:id_socio', async (req, res) => {
 
 router.post('/socios', async (req, res) => {
     try {
-      let socio = req.body;
+      let socios = req.body.lista_socios;
   
-      let resp = await _sociosController.crearSocio(socio);
+      await _sociosController.crearSocios(socios);
       success(req, res, 'Socio creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);

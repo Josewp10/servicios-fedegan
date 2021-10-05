@@ -29,9 +29,9 @@ router.get('/productos/:id_producto', async (req, res) => {
 
 router.post('/productos', async (req, res) => {
     try {
-      let producto = req.body;
+      let productos = req.body.lista_productos;
   
-      let resp = await _productosController.crearProducto(producto);
+      await _productosController.crearProductos(productos);
       success(req, res, 'Producto creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);

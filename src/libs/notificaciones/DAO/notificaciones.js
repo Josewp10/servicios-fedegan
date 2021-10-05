@@ -11,8 +11,10 @@ class NotificacionesDAO{
         return fakeNotificaciones.notificaciones[posicion_notificacion];
     }
 
-    crearNotificacion(notificacion){
-        fakeNotificaciones.notificaciones.push(notificacion);
+    crearNotificaciones(notificaciones){
+        for (let i = 0; i < notificaciones.length; i++) {
+            fakeNotificaciones.notificaciones.push(notificaciones[i]);
+        }  
     }
 
     eliminarNotificaciones(posiciones_notificaciones){

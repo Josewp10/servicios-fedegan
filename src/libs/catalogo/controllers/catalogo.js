@@ -30,9 +30,9 @@ class CatalogoController{
         return _catalogoDAO.consultarCatalogo(posicion);
     }
 
-    async crearCatalogo(catalogo){
-        _listas.enLista(fakeCatalogo.catalogo,catalogo.id)
-        _catalogoDAO.crearCatalogo(catalogo);
+    async crearCatalogos(catalogo){
+        _listas.enLista(fakeCatalogo.catalogo,catalogo)
+        _catalogoDAO.crearCatalogos(catalogo);
     }
 
     async eliminarCatalogos(lista_id_catalogo){

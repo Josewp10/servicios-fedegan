@@ -11,8 +11,10 @@ class CitasDAO{
         return fakeCitas.citas[posicion_cita];
     }
 
-    crearCita(cita){
-        fakeCitas.citas.push(cita);
+    crearCitas(citas){
+        for (let i = 0; i < citas.length; i++) {
+            fakeCitas.citas.push(citas[i]);
+        }
     }
 
     eliminarCitas(posiciones_citas){

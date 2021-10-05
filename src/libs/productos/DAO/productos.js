@@ -11,8 +11,10 @@ class ProductosDAO{
         return fakeProductos.productos[posicion_producto];
     }
 
-    crearProducto(producto){
-        fakeProductos.productos.push(producto);
+    crearProductos(productos){
+        for (let i = 0; i < productos.length; i++) {
+            fakeProductos.productos.push(productos[i]);
+        }   
     }
 
     eliminarProductos(posiciones_productos){

@@ -11,8 +11,10 @@ class CatalogoDAO{
         return fakeCatalogo.catalogo[posicion_catalogo];
     }
 
-    crearCatalogo(catalogo){
-        fakeCatalogo.catalogo.push(catalogo);
+    crearCatalogos(catalogos){
+        for (let i = 0; i < catalogos.length; i++) {
+            fakeCatalogo.catalogo.push(catalogos[i]);
+        }   
     }
 
     eliminarCatalogos(posiciones_catalogo){

@@ -30,9 +30,9 @@ class NotificacionesController{
         return _notificacionesDAO.consultarNotificacion(posicion);
     }
 
-    async crearNotificacion(notificacion){
-        _listas.enLista(fakeNotificaciones.notificaciones,notificacion.id)
-       return _notificacionesDAO.crearNotificacion(notificacion);
+    async crearNotificaciones(notificaciones){
+        _listas.enLista(fakeNotificaciones.notificaciones,notificaciones)
+       return _notificacionesDAO.crearNotificaciones(notificaciones);
     }
 
     async eliminarNotificaciones(lista_id_notificacion){

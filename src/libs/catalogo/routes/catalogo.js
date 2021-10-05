@@ -29,9 +29,9 @@ router.get('/catalogo/:id_catalogo', async (req, res) => {
 
 router.post('/catalogo', async (req, res) => {
     try {
-      let catalogo = req.body;
+      let catalogos = req.body.lista_catalogos;
   
-      let resp = await _catalogoController.crearCatalogo(catalogo);
+      await _catalogoController.crearCatalogos(catalogos);
       success(req, res, 'Catalogo creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);

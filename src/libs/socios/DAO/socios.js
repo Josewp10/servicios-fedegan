@@ -11,11 +11,12 @@ class SociosDAO{
         return fakeSocios.socios[posicion_socio];
     }
 
-    crearSocio(socio){
-        fakeSocios.socios.push(socio);
+    crearSocios(socios){
+        for (let i = 0; i < socios.length; i++) {
+            fakeSocios.socios.push(socios[i]);
+        }   
     }
 
-    
     actualizarSocios(socios, posiciones_socios){
         for (let i = 0; i < socios.length; i++) {
             let posicion=posiciones_socios[i];

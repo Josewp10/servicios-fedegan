@@ -11,8 +11,10 @@ class FormulariosDAO{
         return fakeFormularios.formularios[posicion_formulario];
     }
 
-    crearFormulario(formulario){
-        fakeFormularios.formularios.push(formulario);
+    crearFormularios(formularios){
+        for (let i = 0; i < formularios.length; i++) {
+            fakeFormularios.formularios.push(formularios[i]);
+        }  
     }
 
     actualizarFormularios(formulario, posiciones_formulario){

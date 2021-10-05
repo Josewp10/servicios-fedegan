@@ -29,10 +29,10 @@ router.get('/formularios/:id_formulario', async (req, res) => {
 
 router.post('/formularios', async (req, res) => {
     try {
-      let formulario = req.body;
+      let formularios = req.body.lista_formularios;
   
-      let resp = await _formulariosController.crearFormulario(formulario);
-      success(req, res, 'formulario creado', null, 200);
+      await _formulariosController.crearFormularios(formularios);
+      success(req, res, 'Formulario creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);
     }

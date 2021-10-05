@@ -30,9 +30,9 @@ class FormulariosController{
         return _formulariosDAO.consultarFormulario(posicion);
     }
 
-    async crearFormulario(formulario){
-        _listas.enLista(fakeFormularios.formularios,formulario.id)
-        _formulariosDAO.crearFormulario(formulario);
+    async crearFormularios(formularios){
+        _listas.enLista(fakeFormularios.formularios,formularios)
+        _formulariosDAO.crearFormularios(formularios);
     }
 
     async actualizarFormularios(formularios, lista_ids){

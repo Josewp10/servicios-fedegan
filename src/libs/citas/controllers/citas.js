@@ -32,9 +32,9 @@ class CitasController{
         return _citasDAO.consultarCita(posicion);
     }
 
-    async crearCita(cita){
-        _listas.enLista(fakeCitas.citas,cita.id)
-        _citasDAO.crearCita(cita);
+    async crearCitas(citas){
+        _listas.enLista(fakeCitas.citas,citas)
+        _citasDAO.crearCitas(citas);
     }
 
     async eliminarCitas(lista_id_cita){
