@@ -20,6 +20,11 @@ class NotificacionesDAO{
     eliminarNotificaciones(posiciones_notificaciones){
         for (let i = 0; i < posiciones_notificaciones.length; i++) {
             fakeNotificaciones.notificaciones.splice(posiciones_notificaciones[i],1);
+            if (i==0) {
+                fakeNotificaciones.notificaciones.splice(posiciones_notificaciones[i],1);
+            }else{
+                fakeNotificaciones.notificaciones.splice(posiciones_notificaciones[i]-1,1);
+            }
         }        
     }
 

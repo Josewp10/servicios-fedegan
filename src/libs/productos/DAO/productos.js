@@ -20,7 +20,13 @@ class ProductosDAO{
     eliminarProductos(posiciones_productos){
         for (let i = 0; i < posiciones_productos.length; i++) {
             fakeProductos.productos.splice(posiciones_productos[i],1);
+            if (i==0) {
+                fakeProductos.productos.splice(posiciones_productos[i],1);
+            }else{
+                fakeProductos.productos.splice(posiciones_productos[i]-1,1);
+            }
         }        
+
     }
 
     eliminarProducto(posicion){
