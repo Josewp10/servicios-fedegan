@@ -21,22 +21,25 @@ const ruta_pedidos = require('./libs/pedidos/routes/pedidos');
 const ruta_socios = require('./libs/socios/routes/socios');
 const ruta_productos = require('./libs/productos/routes/productos');
 const ruta_notificaciones = require('./libs/notificaciones/routes/notificaciones');
+const ruta_catalogo = require('./libs/catalogo/routes/catalogo');
+const ruta_formularios = require('./libs/formularios/routes/formularios');
+const ruta_citas = require('./libs/citas/routes/citas');
+const ruta_pagos = require('./libs/pagos/routes/pagos');
+const ruta_federaciones = require ('./libs/federaciones/routes/federaciones');
+const ruta_vacunadores = require('./libs/vacunadores/routes/vacunadores');
+const ruta_facturaciones = require('./libs/facturaciones/routes/facturaciones');
+
+app.use(ruta_federaciones);
+app.use(ruta_vacunadores);
+app.use(ruta_facturaciones);
+app.use(ruta_pagos);
+app.use(ruta_citas);
+app.use(ruta_formularios);
+app.use(ruta_catalogo);
 app.use(ruta_socios);
 app.use(ruta_pedidos);
 app.use(ruta_productos);
 app.use(ruta_notificaciones);
-
-const ruta_catalogo = require('./libs/catalogo/routes/catalogo');
-app.use(ruta_catalogo);
-
-const ruta_formularios = require('./libs/formularios/routes/formularios');
-app.use(ruta_formularios);
-
-const ruta_citas = require('./libs/citas/routes/citas');
-app.use(ruta_citas);
-
-const ruta_pagos = require('./libs/pagos/routes/pagos');
-app.use(ruta_pagos);
 
 //Port
 const port = config.get('SERVER.port');
