@@ -29,9 +29,9 @@ router.get('/pedidos/:id_pedido', async (req, res) => {
 
 router.post('/pedidos', async (req, res) => {
     try {
-      let pedido = req.body;
+      let pedidos = req.body.lista_pedidos;
   
-      let resp = await _pedidosController.crearPedido(pedido);
+      await _pedidosController.crearPedidos(pedidos);
       success(req, res, 'Pedido creado', null, 200);
     } catch (error) {
       errorResponse(req, res, 'ERROR', error);

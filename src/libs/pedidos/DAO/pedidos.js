@@ -11,8 +11,10 @@ class PedidosDAO{
         return fakePedidos.pedidos[posicion_pedido];
     }
 
-    crearPedido(pedido){
-        fakePedidos.pedidos.push(pedido);
+    crearPedidos(pedidos){
+        for (let i = 0; i < pedidos.length; i++) {
+            fakePedidos.pedidos.push(pedidos[i]);
+        }   
     }
 
     eliminarPedidos(posiciones_pedidos){
