@@ -16,16 +16,6 @@ class PedidosDAO{
             fakePedidos.pedidos.push(pedidos[i]);
         }   
     }
-
-    eliminarPedidos(posiciones_pedidos){
-        for (let i = 0; i <= posiciones_pedidos.length; i++) {
-            fakePedidos.pedidos.splice(posiciones_pedidos[i],1);
-        }        
-    }
-
-    eliminarPedido(posicion){
-        fakePedidos.pedidos.splice(posicion,1);
-    }
     
     actualizarPedidos(pedidos, posiciones_pedidos){
         for (let i = 0; i <= pedidos.length; i++) {

@@ -36,16 +36,6 @@ class PedidosController{
         _listas.enLista(fakePedidos.pedidos,pedidos)
         _pedidosDAO.crearPedidos(pedidos);
     }
-
-    async eliminarPedidos(lista_id_pedido){
-        let posiciones_pedidos = _listas.posicionesEnLista(fakePedidos.pedidos, lista_id_pedido);
-        _pedidosDAO.eliminarPedidos(posiciones_pedidos);
-    }
-
-    async eliminarPedido(id_pedido){
-        let posicion = _listas.posicionEnLista(fakePedidos.pedidos, id_pedido);
-        _pedidosDAO.eliminarPedido(posicion);
-    }
     
     async actualizarPedidos(pedidos, lista_ids){
         _listas.mismoId(pedidos, lista_ids);
