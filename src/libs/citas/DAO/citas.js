@@ -18,8 +18,14 @@ class CitasDAO{
     }
 
     eliminarCitas(posiciones_citas){
-        for (let i = 0; i <= posiciones_citas.length; i++) {
-            fakeCitas.citas.splice(posiciones_citas[i],1);
+        for (let i = 0; i < posiciones_citas.length; i++) {
+           console.log(i-1);
+            if (i==0) {
+                fakeCitas.citas.splice(posiciones_citas[i],1);
+            }else{
+                fakeCitas.citas.splice(posiciones_citas[i]-1,1);
+            }
+            
         }        
     }
 
