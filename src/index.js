@@ -21,6 +21,9 @@ app.get('/', (req,res) =>{
 const ruta_pedidos = require('./libs/pedidos/routes/pedidos');
 app.use(ruta_pedidos);
 
+const ruta_pagos = require('./libs/pagos/routes/pagos');
+app.use(ruta_pagos);
+
 //Port
 const port = config.get('SERVER.port');
 

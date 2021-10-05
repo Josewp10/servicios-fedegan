@@ -23,12 +23,15 @@ class Listas{
         return posicion;
     }
 
-    enLista(lista, id){
-        for (let i = 0; i <lista.length; i++) {
-            if (lista[i].id==id) {
-                throw 'El elemento ya existe';
-            }
+    enLista(lista, lista_ids){
+        for (let i = 0; i <lista_ids.length; i++) {
+            for (let j = 0; j <lista.length; j++) {
+                if (lista_ids[i].id==lista[j].id) {
+                    throw `El elemento ${lista_ids[i].id} ya existe`;
+                }
+            }            
         }
+        
     }
 
     mismoId(lista_pedidos, lista_ids){
